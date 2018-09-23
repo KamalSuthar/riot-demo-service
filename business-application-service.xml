@@ -49,7 +49,7 @@
         </config-item>
       </configItems>
       <messages/>
-      <containerAlias>business-application-kjar</containerAlias>
+      <containerAlias>riotdemocontainer</containerAlias>
     </container>
   </containers>
 </kie-server-state>
