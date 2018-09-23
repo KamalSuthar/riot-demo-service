@@ -37,11 +37,24 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- ADDED FOR DEMO -->
     <dependency>
-      <groupId>com.github.taycaldwell</groupId>
-      <artifactId>riot-api-java</artifactId>
-      <version>4.1.0</version>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
     </dependency>
+
+    <dependency>
+      <groupId>com.company</groupId>
+      <artifactId>business-application-kjar</artifactId>
+      <version>${version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>net.sourceforge.nekohtml</groupId>
+      <artifactId>nekohtml</artifactId>
+    </dependency>
+
+    <!-- END ADDED FOR DEMO -->
   </dependencies>
 
   <build>
