@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.company.service.input.SummonerInput;
-import com.myproject.MatchAverages;
+import com.company.model.MatchAverages;
 import org.jbpm.services.api.DeploymentService;
 import org.jbpm.services.api.ProcessService;
 import org.jbpm.services.api.RuntimeDataService;

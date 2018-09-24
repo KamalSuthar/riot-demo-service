@@ -45,8 +45,14 @@
 
     <dependency>
       <groupId>com.company</groupId>
-      <artifactId>business-application-kjar</artifactId>
+      <artifactId>business-application-model</artifactId>
       <version>${version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jbpm.contrib</groupId>
+      <artifactId>riot-workitem</artifactId>
+      <version>${version.org.kie}</version>
     </dependency>
 
     <dependency>
