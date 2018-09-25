@@ -24,7 +24,7 @@ if [ "$MVN_ARG_LINE" != "" ] ; then
 
     "$mvnBin" -v
     echo
-    projects=( "*-model" "*-kjar" "business-application-service")
+    projects=( "*-model" "*-kjar" "riot-demo-service")
 
     for suffix in "${projects[@]}"; do
 
@@ -63,16 +63,16 @@ fi
 if [[ "$@" =~ "docker" ]]; then
     echo "Launching the application as docker container..."
     
-    docker run -d -p 8090:8090 --name business-application-service apps/business-application-service:1.0-SNAPSHOT
+    docker run -d -p 8090:8090 --name riot-demo-service apps/riot-demo-service:1.0-SNAPSHOT
 elif [[ "$@" =~ "openshift" ]]; then
     echo "Launching the application on OpenShift..."
     
-    oc new-app business-application-service:1.0-SNAPSHOT
-    oc expose svc/business-application-service
+    oc new-app riot-demo-service:1.0-SNAPSHOT
+    oc expose svc/riot-demo-service
 else
 
 	echo "Launching the application locally..."
-	pattern="business-application-service"
+	pattern="riot-demo-service"
 	files=( $pattern )
 	cd ${files[0]}
 	executable="$(ls  *target/*.jar | tail -n1)"

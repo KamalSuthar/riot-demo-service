@@ -12,7 +12,7 @@ if "%*" == "" (
 
 	cd ..
 
-	for %%s in ("-model" "-kjar" "business-application-service") do (
+	for %%s in ("-model" "-kjar" "riot-demo-service") do (
 
 			cd *%%s
 			echo ===============================================================================
@@ -35,14 +35,14 @@ goto :startapp
 :startapp
 	if not x%mavenInput:docker=%==x%mavenInput% (
 		echo Launching the application as docker container...
-		call docker run -d -p 8090:8090 --name business-application-service apps/business-application-service:1.0-SNAPSHOT
+		call docker run -d -p 8090:8090 --name riot-demo-service apps/riot-demo-service:1.0-SNAPSHOT
 	) else if not x%mavenInput:openshift=%==x%mavenInput% (
 		echo Launching the application on OpenShift...
-		call oc new-app business-application-service:1.0-SNAPSHOT
-		call oc expose svc/business-application-service
+		call oc new-app riot-demo-service:1.0-SNAPSHOT
+		call oc expose svc/riot-demo-service
 	) else (
 		echo "Launching the application locally..."
-		cd business-application-service
+		cd riot-demo-service
 		cd target
 		for /f "delims=" %%x in ('dir /od /b *.jar') do set latestjar=%%x
 		cd ..
